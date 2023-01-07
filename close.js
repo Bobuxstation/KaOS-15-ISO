@@ -164,6 +164,5 @@ function fullscreen(link) {
   }
 }
 function runprompt () {
-  applink = prompt("Insert Application ID");
-  fullscreen(applink);
+  document.getElementById('rundialog').style.display = "block"
 }

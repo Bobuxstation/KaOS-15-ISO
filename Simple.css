@@ -54,8 +54,6 @@ width: 98.5%;
 height: 40px;
 margin-bottom: 0;
 padding: 0;
-background: rgb(0,0,0);
-background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(71,71,71,0) 50%, rgba(144,144,144,0) 100%);
 backdrop-filter: blur(50px);
 border-radius: 10px;
 display: flex;

@@ -29,6 +29,15 @@
     </ol>
     <script type="text/javascript" src="finder.js"></script>
     </div>
+    <div id="rundialog" style="background-color: lightgray; padding: 5px; text-align: center;position:fixed!important; z-index:1; font-family: 'Times New Roman', Times, serif; display: none;">
+        <div style=" padding: 5px;background-color: blue; color: white;">
+            <h2 style="margin: 0;">Run an app</h2>
+        </div><br>
+        <input id="runinput" style="background: none; width: 100%; padding: 5px; font-family: 'Times New Roman', Times, serif;" placeholder="URL">
+        <br><br>
+        <button style="background: none; padding: 5px; font-family: 'Times New Roman', Times, serif;" onclick="document.getElementById('rundialog').style.display = 'none'">Cancel</button>
+        <button style="background: none; padding: 5px; font-family: 'Times New Roman', Times, serif;" onclick="fullscreen(document.getElementById('runinput').value);document.getElementById('rundialog').style.display = 'none'">Run</button>
+    </div>
 </div>
 <div class="sidebar2" id="Sidebar">
 <div class="search2"><h2 style="text-align: left; vertical-align: left; padding: 0; margin: 0;"><i class="fa-solid fa-circle-user"></i>&nbsp;&nbsp;User1</h2></div>
@@ -130,7 +139,11 @@
     <button onclick="CloseTerminal(); fullscreen('terminal.html')" class="closebutton2"><i class="fa-regular fa-square"></i></button>
     <button onclick="CloseTerminal()" class="closebutton2"><i class="fa-regular fa-window-minimize"></i></button>
 </div>
-<div class="content"><iframe src="" id="terminal" width="600" height="450" style="border-radius: 0px 0px 5px 5px; border: black solid 0px; background-color: white; overflow: hidden;"></iframe>
+<div class="content">
+    <div style="height: 450px; overflow: auto; background: black; font-family: 'Times New Roman', Times, serif;">
+        <p id="terminaltext" style="color: white; user-select: all;"></p>
+        <input placeholder="KaOS Terminal" class="input1" id="input1" style="width: 100%; background: lightgray;">
+    </div>
 </div></div>
 
 
@@ -242,5 +255,6 @@ document.getElementById("Sidebar2").style.display = "none";
     }
 </script>
 <script type="text/javascript" src="time.js"></script>
+<script src="launcher.js"></script>
 </body>
 </html>
