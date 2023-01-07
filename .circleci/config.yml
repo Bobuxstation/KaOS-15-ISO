@@ -33,10 +33,10 @@ jobs:
       - persist_to_workspace:
           root: filesystem
           paths:
-            - KasiusNextISO.iso
+            - KaOS15.iso
 
       - store_artifacts:
-          path: ~/repo/filesystem/KasiusNextISO.iso
+          path: ~/repo/filesystem/KaOS15.iso
   
   publish-github-release:
     working_directory: ~/repo

@@ -1,6 +1,6 @@
 {
   "AppImage": "dist/kasiusnext.AppImage",
-  "name": "KasiusNextISO",
+  "name": "KaOS15",
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
@@ -17,8 +17,8 @@
   },
   "build": {
     "appId": "com.kaos.alpha",
-    "productName": "KasiusNextISO",
-    "artifactName": "kasiusnext.${ext}",
+    "productName": "KaOS15",
+    "artifactName": "KaOS15.${ext}",
     "target": "AppImage"
   },
   "dependencies": {
