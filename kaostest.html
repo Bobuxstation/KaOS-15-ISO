@@ -1,0 +1,246 @@
+<html>
+<head><title>KaOS 15</title>
+<!--Scripts-->
+<script>
+    window.$ = window.jQuery = require('jquery');
+</script>
+<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+<script src="https://kit.fontawesome.com/970a0290cd.js" crossorigin="anonymous"></script>
+<script type="text/javascript" src="close.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="text/javascript" src="Settings.js"></script>
+<link rel="stylesheet" href="style.css" id="style">
+</head>
+<body id="body">
+
+<div class="sidebar">
+    <div class="searchmenu" id="searchbar"><input id="searchbar2" onkeyup="find()">
+    <ol id='list2'>
+        <li class="item" onclick="Closetestwindow2()">MemeMaker</li><br>
+        <li class="item" onclick="Closetestwindow3()">Notes</li><br>
+        <li class="item" onclick="Closetestwindow()">Files</li><br>
+        <li class="item" onclick="Closetestwindow8()">KaosVm</li><br>
+        <li class="item" onclick="Closetestwindow4()">Media</li><br>
+        <li class="item" onclick="Closetestwindow5()">Store</li><br>
+        <li class="item" onclick="CloseVSCode()">Visual Studio Code</li><br>
+        <li class="item" onclick="CloseTerminal()">Terminal</li><br>
+        <li class="item" onclick="Closetestwindow6()">Settings</li><br>
+        <li class="item" onclick="Closetestwindow7()">About</li><br>
+    </ol>
+    <script type="text/javascript" src="finder.js"></script>
+    </div>
+</div>
+<div class="sidebar2" id="Sidebar">
+<div class="search2"><h2 style="text-align: left; vertical-align: left; padding: 0; margin: 0;"><i class="fa-solid fa-circle-user"></i>&nbsp;&nbsp;User1</h2></div>
+
+<button onclick="Closetestwindow2()" class="menubutton2" title="Meme Maker"><img src="Icons/mememaker.png" style="height: 50px; width: 50px;"></img></button>
+<button onclick="Closetestwindow3()" class="menubutton2" title="Notes"><img src="Icons/notes.png" style="height: 50px; width: 50px;"></img></button>
+<button onclick="Closetestwindow()" class="menubutton2" title="Files"><img src="Icons/filesicon.png" style="height: 50px; width: 50px;"></img></button>
+<button onclick="Closetestwindow8()" class="menubutton2" title="KaOS VM"><img src="KaOS13Logo.png" style="height: 50px; width: 50px;"></img></button>
+<button onclick="Closetestwindow4()" class="menubutton2" title="Media"><img src="Icons/media.png" style="height: 50px; width: 50px;"></img></button>
+<button onclick="Closetestwindow5()" class="menubutton2" title="Store"><img src="Icons/Store.png" style="height: 50px; width: 50px;"></img></button>
+<button onclick="CloseVSCode()" class="menubutton2" title="Visual Studio Code"><img src="Icons/vscode.png" style="height: 50px; width: 50px;"></img></button>
+<button onclick="CloseTerminal()" class="menubutton2" title="Terminal"><img src="Icons/terminal.png" style="height: 50px; width: 50px;"></img></button>
+<button onclick="CloseForward()" class="menubutton2" title="Forward"><img src="Icons/icon.png" style="height: 50px; width: 50px;"></img></button>
+<button onclick="fullscreen('https://bobuxstation.github.io/KaOS-14/MEDIA.html');" class="menubutton2"><i class="fa-solid fa-desktop" style="height: 50px; width: 50px; font-size: 50px;"></i></button>
+<button onclick="asatlif()" class="menubutton2"><i class="fa-solid fa-elevator" style="height: 50px; width: 50px; font-size: 50px;"></i></button>
+<button onclick="weather()" class="menubutton2"><i class="fa-solid fa-cloud" style="height: 50px; width: 50px; font-size: 50px;"></i></button>
+<button onclick="fullscreen('https://zeankundev.github.io/type/');" class="menubutton2"><img src="https://zeankundev.github.io/type/logo.png" style="height: 50px; width: 50px;"></img></button>
+
+<div class="search">
+&nbsp;
+<button style="width: 6%; background-color: transparent; color: white; vertical-align: middle; border: black solid 0px;" onclick="runprompt()"><i class="fa-solid fa-upload"></i></button>&nbsp;
+<button style="width: 6%; background-color: transparent; color: white; vertical-align: middle; border: black solid 0px;" onclick="Closetestwindow6()"><i class="fa-solid fa-gear"></i></button>&nbsp;
+<button onclick="Closetestwindow7()" style="width: 6%; background-color: transparent; border: black solid 0px; color: white;"><i class="fa-solid fa-circle-info"></i></button>
+&nbsp;<a href="index.html"><button style="width: 6%; background-color: transparent; border: black solid 0px; color: white;"><i class="fa-solid fa-arrow-right-from-bracket"></i></button></a>
+</div>
+</div>
+
+<div class="notifications" id="Sidebar2">
+<button onclick="fullscreen()"><i class="fa-solid fa-x"></i></button>
+<webview src="" id="fullscreenapp"></webview>
+</div>
+
+
+<!--Window-->
+
+<h1 id="span" style="padding: 0; margin: 0; text-align: center;"></h1>
+
+<div class="window" id="window">
+ <div class="header"><button class="headertext">Files Beta</button>
+    <button onclick="Closetestwindow()" class="closebutton"><i class="fa-solid fa-x"></i></button>
+    <button onclick="Closetestwindow(); fullscreen('https://zeankundev.github.io/KaOS/files.html')" class="closebutton2"><i class="fa-regular fa-square"></i></button>
+    <button onclick="Closetestwindow()" class="closebutton2"><i class="fa-regular fa-window-minimize"></i></button>
+</div>
+ <div class="content"><iframe src="" width="600" height="450" style="border-radius: 0px 0px 5px 5px; border: black solid 0px; background-color: white;" id="files"></iframe></div></div>
+
+
+<div class="window" id="window2">
+<div class="header"><button class="headertext">Meme Maker</button>
+    <button onclick="Closetestwindow2()" class="closebutton"><i class="fa-solid fa-x"></i></button>
+    <button onclick="Closetestwindow2(); fullscreen('Apps/MEMEMAKER.html')" class="closebutton2"><i class="fa-regular fa-square"></i></button>
+    <button onclick="Closetestwindow2()" class="closebutton2"><i class="fa-regular fa-window-minimize"></i></button>
+</div>
+<div class="content"><iframe src="" id="mememaker" width="600" height="450" style="border-radius: 0px 0px 5px 5px; border: black solid 0px;"></iframe></div></div>
+
+
+<div class="window" id="window3">
+<div class="header"><button class="headertext" onclick="saveTXT()">Notes</button>
+    <button onclick="Closetestwindow3()" class="closebutton"><i class="fa-solid fa-x"></i></button>
+    <button onclick="Closetestwindow3()" class="closebutton2"><i class="fa-regular fa-window-minimize"></i></button>
+</div>
+<div class="content"><textarea id="msg" style="border-radius: 0px 0px 5px 5px; border: black solid 0px; width: 600; height: 450; resize: none; opacity: .85; background-color: #1d1d1d; backdrop-filter: blur(20px); color: white; font-family: arial; font-size: 15px; padding: 5px;" ></textarea></div></div>
+
+
+<div class="window" id="window4">
+<div class="header"><button class="headertext">Media</button>
+    <button onclick="Closetestwindow4()" class="closebutton"><i class="fa-solid fa-x"></i></button>
+    <button onclick="Closetestwindow4(); fullscreen('MEDIA.html')" class="closebutton2"><i class="fa-regular fa-square"></i></button>
+    <button onclick="Closetestwindow4()" class="closebutton2"><i class="fa-regular fa-window-minimize"></i></button>
+</div>
+<div class="content"><iframe src="MEDIA.html" style="border-radius: 0px 0px 5px 5px; border: black solid 0px; width: 600; height: 450; background-color: #1d1d1d; opacity: .95; backdrop-filter: blur(10px);"></iframe></div></div>
+
+
+<div class="window" id="window5">
+<div class="header"><button class="headertext">Store</button>
+    <button onclick="Closetestwindow5()" class="closebutton"><i class="fa-solid fa-x"></i></button>
+    <button onclick="Closetestwindow5(); fullscreen('https://zeankundev.github.io/KaOS-Store/')" class="closebutton2"><i class="fa-regular fa-square"></i></button>
+    <button onclick="Closetestwindow5()" class="closebutton2"><i class="fa-regular fa-window-minimize"></i></button>
+</div>
+<div class="content"><iframe src="https://zeankundev.github.io/KaOS-Store/" id="store" width="600" height="450" style="border-radius: 0px 0px 5px 5px; border: black solid 0px; background-color: white;"></iframe>
+</div></div>
+
+<div class="window" id="window8">
+<div class="header"><button class="headertext">Visual Studio Code</button>
+    <button onclick="CloseVSCode()" class="closebutton"><i class="fa-solid fa-x"></i></button>
+    <button onclick="CloseVSCode(); fullscreen('https://vscode.dev')" class="closebutton2"><i class="fa-regular fa-square"></i></button>
+    <button onclick="CloseVSCode()" class="closebutton2"><i class="fa-regular fa-window-minimize"></i></button>
+</div>
+<div class="content"><webview src="" id="vscode" width="600" height="450" style="border-radius: 0px 0px 5px 5px; border: black solid 0px; background-color: white; height: 450px;"></webview>
+</div></div>
+
+<div class="window" id="forwardwin">
+<div class="header" style="width: 800px !important;"><button class="headertext">Forward</button><button onclick="CloseForward()" class="closebutton"><i class="fa-solid fa-x"></i></button></div>
+<div class="content"><webview src="" id="forward" width="800" height="450" style="border-radius: 0px 0px 5px 5px; border: black solid 0px; background-color: white; height:450px; width:800px;"></webview>
+</div></div>
+
+<div class="window" id="window9">
+<div class="header"><button class="headertext">Terminal</button>
+    <button onclick="CloseTerminal()" class="closebutton"><i class="fa-solid fa-x"></i></button>
+    <button onclick="CloseTerminal(); fullscreen('terminal.html')" class="closebutton2"><i class="fa-regular fa-square"></i></button>
+    <button onclick="CloseTerminal()" class="closebutton2"><i class="fa-regular fa-window-minimize"></i></button>
+</div>
+<div class="content"><iframe src="" id="terminal" width="600" height="450" style="border-radius: 0px 0px 5px 5px; border: black solid 0px; background-color: white; overflow: hidden;"></iframe>
+</div></div>
+
+
+<div class="window" id="window7">
+<div class="header"><button class="headertext">About</button>
+    <button onclick="Closetestwindow7()" class="closebutton"><i class="fa-solid fa-x"></i></button>
+    <button onclick="Closetestwindow7(); fullscreen('version.html')" class="closebutton2"><i class="fa-regular fa-square"></i></button>
+    <button onclick="Closetestwindow7()" class="closebutton2"><i class="fa-regular fa-window-minimize"></i></button>
+</div>
+<div class="content"><iframe src="version.html" width="600" height="450" style="border-radius: 0px 0px 5px 5px; border: black solid 0px; background-color: white;"></iframe>
+</div></div>
+
+<div class="window" id="asatlif">
+<div class="header"><button class="headertext">AsatLif Simulator</button>
+    <button onclick="asatlif()" class="closebutton"><i class="fa-solid fa-x"></i></button>
+    <button onclick="asatlif(); fullscreen('https://zeankundev.github.io/KaOS-Store/apps/ASATLIF.html')" class="closebutton2"><i class="fa-regular fa-square"></i></button>
+    <button onclick="asatlif()" class="closebutton2"><i class="fa-regular fa-window-minimize"></i></button>
+</div>
+<div class="content"><iframe src="https://zeankundev.github.io/KaOS-Store/apps/ASATLIF.html" width="600" height="450" style="border-radius: 0px 0px 5px 5px; border: black solid 0px; background-color: white;"></iframe>
+</div></div>
+
+<div class="window" id="weather">
+<div class="header"><button class="headertext">Weather</button>
+    <button onclick="weather()" class="closebutton"><i class="fa-solid fa-x"></i></button>
+    <button onclick="weather(); fullscreen('https://zeankundev.github.io/KaOS-13/weather/index.html')" class="closebutton2"><i class="fa-regular fa-square"></i></button>
+    <button onclick="weather()" class="closebutton2"><i class="fa-regular fa-window-minimize"></i></button>
+</div>
+<div class="content"><iframe src="https://zeankundev.github.io/KaOS-13/weather/index.html" width="600" height="450" style="border-radius: 0px 0px 5px 5px; border: black solid 0px; background-color: white;"></iframe>
+</div></div>
+
+<div class="window" id="vm">
+<div class="header" style="width: 800px;"><button class="headertext">KaOS Vm</button>
+    <button onclick="Closetestwindow8()" class="closebutton"><i class="fa-solid fa-x"></i></button>
+    <button onclick="Closetestwindow8(); fullscreen('https://zeankundev.github.io/KaOS-VM/')" class="closebutton2"><i class="fa-regular fa-square"></i></button>
+    <button onclick="Closetestwindow8()" class="closebutton2"><i class="fa-regular fa-window-minimize"></i></button></div>
+<div class="content"><iframe src="https://zeankundev.github.io/KaOS-VM/" width="800" height="450" style="border-radius: 0px 0px 5px 5px; border: black solid 0px; background-color: white;"></iframe>
+</div></div>
+
+<div class="window" id="window6">
+<div class="header" id="header"><button class="headertext">⚙️ Settings</button><button onclick="Closetestwindow6()" class="closebutton"><i class="fa-solid fa-x"></i></button><button onclick="Closetestwindow6()" class="closebutton2"><i class="fa-regular fa-window-minimize"></i></button></div>
+<div class="content" style="width: 600px;">
+    <div class="settingssidebar" style="background-color: #1d1d1d; color: #fff; width: 105.30px; float: left; height: 450px; border-radius: 0px 0px 0px 5px; box-sizing: border-box; padding: 5px;">
+        <H3 style="margin: 0;"><i class="fa-solid fa-palette"></i> Theme</H3>
+        <br><H3 style="margin: 0;"><i class="fa-solid fa-clock"></i> Time</H3>
+        <br><h3 style="margin: 0;"><i class="fa-solid fa-question"></i> About</h3>
+        <br><h3 style="margin: 0;"><i class="fa-solid fa-triangle-exclamation"></i> Beta</h3>
+    </div>
+    <div class="Settings" style="background-color: #232323; color: white; float: right; width: 484.7px; height: 440px; padding: 5px; border-radius: 0px 0px 5px 0px;">
+<h4><i class="fa-solid fa-triangle-exclamation"></i> KaOS 15 will stop receiving updates after the 30th november of 2022</h4>
+        <h3 style="margin-top: 0;">Backgrounds</h3>
+<button onclick="bg1()" class="special">Normal</button><br><br>
+<button onclick="bg2()" class="special">City With Water</button><br><br>
+<button onclick="bg3()" class="special">Flowers</button><br><br>
+<button onclick="bg4()" class="special">Boardwalk</button><br><br>
+<input type="file" accept="image/*" onchange="custom_bg(event)"><br>
+    <h3>Themes/WebDE</h3>
+<button onclick="color1()" class="special">Default</button><br><br>
+<button onclick="color2()" class="special">Tablet Mode</button><br><br>
+<button onclick="color3()" class="special">Too Simple</button><br><br>
+<button onclick="color4()" class="special">Classic</button><br><br>
+</div>
+</div></div>
+
+</section>
+
+
+<!--Footer-->
+
+<footer>
+<button onclick="menu()" class="menubutton" id="importantbuttons"><img src="logo.svg" style="height: 24px; width: 24px; fill: white;"></img></button>
+<nav><ul class="nav">
+
+<li><button onclick="Closetestwindow2()" class="menubutton"><img src="Icons/mememaker.png" style="height: 24px; width: 24px;"></img>&nbsp;&nbsp;</button></li>
+<li><button onclick="Closetestwindow3()" class="menubutton"><img src="Icons/notes.png" style="height: 24px; width: 24px;"></img>&nbsp;&nbsp;</button></li>
+<li><button on
+click="Closetestwindow()" class="menubutton" style=" margin-right: 0px;"><img src="Icons/filesicon.png" style="height: 24px; width: 24px;"></img>&nbsp;&nbsp;</button></li>
+</ul></nav>
+<button style="float: right;" class="menubutton" onclick="search()" id="importantbuttons"><i class="fa-solid fa-magnifying-glass"></i></button>
+</footer>
+
+
+
+<script>
+$( ".window" ).draggable({ handle: ".header" });
+document.getElementById("Sidebar2").style.display = "none";
+</script>
+<script type="text/javascript">
+    let saveTXT = () => {
+        const msg = document.getElementById('msg');
+        let data = 
+            '' + msg.value;
+        
+        const textToBLOB = new Blob([data], { type: 'text/plain' });
+        const sFileName = 'Project.TXT';
+
+        let newLink = document.createElement("a");
+        newLink.download = sFileName;
+
+        if (window.webkitURL != null) {
+            newLink.href = window.webkitURL.createObjectURL(textToBLOB);
+        }
+        else {
+            newLink.href = window.URL.createObjectURL(textToBLOB);
+            newLink.style.display = "none";
+            document.body.appendChild(newLink);
+        }
+
+        newLink.click(); 
+    }
+</script>
+<script type="text/javascript" src="time.js"></script>
+</body>
+</html>

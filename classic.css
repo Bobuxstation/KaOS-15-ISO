@@ -1,0 +1,258 @@
+* {
+    cursor: url('medias/mouse.png'), auto;
+}
+body {
+  font-family: Inter !important;
+  overflow: hidden;
+  background-color: lightblue;
+}
+@font-face {
+    font-family: Minecraft;
+    src: url(Minecraftia.ttf);
+}
+footer {
+  overflow: hidden;
+  position: fixed;
+  float: left;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  background-color: lightgray;
+  padding-left: 5px;
+  border: black solid 1px;
+  padding-top: 4px;
+}
+.window {
+    height: 0px;
+    width: 0px;
+    display: none;
+    animation: open 0.05s ease 0s 1 normal forwards;
+}
+.header {
+   height: 30px;
+   width: 598px;
+   background-color: lightblue;
+   overflow: auto;
+  border: black solid 1px;
+}
+.content {
+   width: 600px;
+   margin: 0;
+   padding: 0;
+   height: 450px;
+   resize: both;
+}
+@keyframes popup {
+    0% {
+      opacity: 0;
+      transform: rotateX(100deg);
+      transform-origin: bottom;
+    }
+  
+    100% {
+      opacity: 1;
+      transform: rotateX(0);
+      transform-origin: bottom;
+    }
+  }
+  @keyframes close {
+    0% {
+      opacity: 1;
+      transform: rotateX(0);
+      transform-origin: bottom;
+    }
+  
+    100% {
+      opacity: 0;
+      transform: rotateX(-70deg);
+      transform-origin: bottom;
+    }
+  }
+  @keyframes open {
+    0% {
+      transform: scale(0.5);
+    }
+    
+    100% {
+      transform: scale(1);
+    }
+  }
+.headertext {
+    color: black;
+    background-color: lightblue;
+    border: black solid 0px;
+    border-radius: 0px;
+    font-size: 18px;
+    padding: 6px;
+    height: 30px;
+}
+@keyframes notifs {
+  0% {
+    opacity: 0;
+    transform: rotateY(70deg);
+    transform-origin: right;
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotateY(0);
+    transform-origin: right;
+  }
+}
+.list li {
+  background-color: gray;
+  margin: 10px;
+  padding: 10px;
+  color: white;
+}
+.notifications {
+  height: 93.3%;
+  width:300px;
+  position:fixed!important;
+  color: black;
+  padding: 2.5px;
+  background-color: lightgray;
+  right:0;
+  top: -1;
+  display: none;
+  border: black solid 1px;
+}
+.closebutton {
+    float: right;
+    color: black;
+    background-color: lightgray;
+    height: 100%;
+    width: 45px;
+    font-size: 20px;
+}
+.closebutton:hover{
+    background-color: red;
+
+}
+.menubutton {
+    background: lightgray;
+    padding: 6px;
+    width: 40px;
+    height: 37px;
+    margin-left: 5px;
+    vertical-align: middle;
+    color: black;
+    font-size: 20px;
+    float: left;
+}
+.menubutton:hover {
+    background: gray;
+    width: 40px;
+}
+li {
+    float: left;
+    display: block;
+}
+*{
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+nav{
+display: inline-block;
+}
+#span {
+    font-size: 16px;
+    color: white;
+    display: inline-block;
+}
+.special {
+    border: 1px white solid;
+    padding: 5px;
+    font-size: 9px;
+    color: #fff;
+    background-color: #1d1d1d;
+    border-radius: 5px;
+    font-family: Inter;
+}
+.sidebar{
+    height:17.5%;
+}
+.search {
+    margin-top: auto;
+    width: 98%;
+    background-color: gray;
+    padding: 3px;
+}
+.search2 {
+    width: 98%;
+    background-color: gray;
+    padding: 3px;
+}
+.sidebar2 {
+    height: 72.2%;
+    width:306px;
+    position:fixed!important;
+    z-index:1;
+    overflow: auto;
+    padding: 10px;
+    color: #fff;
+    background-color: lightgray;
+    display: none;
+    flex-direction: column;
+    border: black solid 1px;
+}
+.menubutton2 {
+    background-color: lightgray;
+    font-family: Inter;
+    color: black;
+    padding: 5px;
+    vertical-align: middle;
+    float: left;
+    text-align: left;
+    font-size: 15px;
+}
+.menubutton2:hover {
+    background-color: gray;
+}
+::file-selector-button {
+    font-size: initial;
+    border: 1px white solid;
+    padding: 5px;
+    font-size: 9px;
+    color: #fff;
+    background-color: #1d1d1d;
+    border-radius: 5px;
+}
+.searchmenu {
+    background-color: lightgray;
+    padding: 10px;
+    text-align: center;
+    overflow: auto;
+    color: black;
+    display: none;
+  border: black solid 1px;
+}
+.searchmenu input {
+    padding: 5px;
+    width: 500px;
+}
+#list2 {
+    padding-left: 45%;
+}
+.Userview {
+    background-color: lightgray;
+    padding: 5px;
+    color: black;
+    display: none;
+    border: black solid 1px;
+}
+.Userview img {
+    width: 58px;
+    height: 52px;
+}
+.KasiusTalk {
+    background-color: lightgray;
+    padding: 5px;
+    display: none;
+    color: black;
+    border: black solid 1px;
+}

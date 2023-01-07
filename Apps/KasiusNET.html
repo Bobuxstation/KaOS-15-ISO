@@ -1,0 +1,23 @@
+<html>
+<head>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body><style>body {
+overflow: hidden;
+}
+</style>
+    <form>
+        <input type="text" id="id" style="width: 522px;" />
+        <input type="button" value="GO>>" onClick="newSite()" />
+    </form>
+  <iframe id="iframe" src="data:text/html;base64,PGh0bWw+Cgk8Ym9keT48c3R5bGU+Ym9keSB7CnRleHQtYWxpZ246IGNlbnRlcjsKYmFja2dyb3VuZC1jb2xvcjogbGlnaHRibHVlOwpmb250LWZhbWlseTogYXJpYWw7Cn08L3N0eWxlPgoJCTxoMT5XZWxjb21lIFRvIEthc2l1c05FVCE8L2gxPjxicj4KPHA+RW50ZXIgdGhlIHBhZ2UgbGluayBpbiB0aGUgdGV4dCBib3ggYWJvdmUgYW5kIHByZXNzIHRoZSBHTyBidXR0b248L3A+CjxwPkthc2l1c05FVCBWMS4wPC9wPgoJPC9ib2R5Pgo8L2h0bWw+Cg==" width="580" height='385'></iframe>
+  <script>
+function newSite() {
+  var site = $('#id').val();
+  var iframe = document.getElementById('iframe');
+  iframe.src = site;
+  iframe.src = iframe.src;
+
+}  </script>
+</body>
+</html>

@@ -1,0 +1,231 @@
+html {
+    cursor: url('medias/mouse.png'), auto;
+}
+body {
+  font-family: Inter !important;
+  background-image: url("bg.jpg");
+  overflow: hidden;
+}
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-button {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-thumb {
+  background: #e1e1e1;
+  border: 0px none #ffffff;
+  border-radius: 41px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ffffff;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #ffffff;
+}
+::-webkit-scrollbar-track {
+  background: #1d1d1d;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-track:hover {
+  background: #1d1d1d;
+}
+::-webkit-scrollbar-track:active {
+  background: #1d1d1d;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+@font-face {
+    font-family: Minecraft;
+    src: url(Minecraftia.ttf);
+}
+footer {
+  overflow: hidden;
+  position: fixed;
+  float: left;
+  bottom: 0;
+  width: 100%;
+  background-color: #1d1d1d;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+}
+.window {
+    height: 0px;
+    width: 0px;
+    display: none;
+}
+.header {
+   height: 30px;
+   background-color: #1d1d1d;
+   cursor: url('medias/mouse.png'), auto;
+   overflow: auto;
+   border-radius: 5px 5px 0px 0px;
+}
+.content {
+   width: 800px;
+   margin: 0;
+   padding: 0;
+   height: 450px;
+   border-radius: 0px 0px 5px 5px;
+   cursor: url('medias/mouse.png'), auto;
+}
+@keyframes popup {
+    0% {
+      opacity: 0;
+      transform: rotateX(100deg);
+      transform-origin: bottom;
+    }
+  
+    100% {
+      opacity: 1;
+      transform: rotateX(0);
+      transform-origin: bottom;
+    }
+  }
+  @keyframes close {
+    0% {
+      opacity: 1;
+      transform: rotateX(0);
+      transform-origin: bottom;
+    }
+  
+    100% {
+      opacity: 0;
+      transform: rotateX(-70deg);
+      transform-origin: bottom;
+    }
+  }
+.headertext {
+    color: white;
+    background-color: #1d1d1d;
+    border: black solid 0px;
+    font-family: Inter;
+    cursor: url('medias/mouse.png'), auto;
+    border-radius: 0px;
+    font-size: 12px;
+    padding: 8px;
+    border-radius: 5px 0px 0px 0px;
+    height: 30px;
+}
+.closebutton {
+    float: right;
+    color: white;
+    background-color: #1d1d1d;
+    height: 100%;
+    width: 50px;
+    cursor: url('medias/mouse.png'), auto;
+    border: black solid 0px;
+    border-radius: 0px 5px 0px 0px;
+    font-size: 20px;
+}
+.closebutton:hover{
+    background-color: red;
+    border: black solid 0px;
+
+}
+.menubutton {
+    background-color: #1d1d1d;
+    border: black solid 0px;
+    padding: 8px;
+    width: 40px;
+    height: 40px;
+    margin-left: 5px;
+    cursor: url('medias/mouse.png'), auto;
+    vertical-align: middle;
+    color: black;
+    float: left;
+    transition: all 0.2s ease;
+}
+.menubutton:hover {
+    background-color: #2e2e2e;
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+    cursor: url('medias/mouse.png'), auto;
+    transition: all 0.2s ease;
+}
+.menubutton:active {
+    padding: 8px;
+    width: 40px;
+    height: 40px;
+    cursor: url('medias/mouse.png'), auto;
+    transition: all 0.2s ease;
+}
+li {
+    float: left;
+    display: block;
+}
+*{
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+nav{
+display: inline-block;
+}
+#span {
+    font-size: 16px;
+    color: white;
+    display: inline-block;
+}
+.special {
+    border: 1px white solid;
+    padding: 5px;
+    font-size: 9px;
+    color: #fff;
+    background-color: #1d1d1d;
+    border-radius: 5px;
+    font-family: Inter;
+}
+.sidebar{
+    height:20%;
+}
+.search {
+    margin-top: auto;
+    width: 98%;
+    background-color: #1d1d1d;
+    padding: 3px;
+}
+.search2 {
+    width: 98%;
+    background-color: #1d1d1d;
+    padding: 3px;
+}
+.sidebar2 {
+    height: 72.2%;
+    width:306px;
+    position:fixed!important;
+    z-index:1;
+    animation: popup 0.4s ease 0s 1 normal none;
+    border-radius: 15px;
+    overflow:auto;
+    padding: 10px;
+    color: #fff;
+    background-color: #1d1d1d;
+    display: none;
+    flex-direction: column;
+}
+.menubutton2 {
+    background-color: #1d1d1d;
+    font-family: Inter;
+    color: white;
+    border: none;
+    cursor: url('medias/mouse.png'), auto;
+    padding: 5px;
+    border-radius: 3px;
+    vertical-align: middle;
+    float: left;
+    transition: all 0.2s ease;
+    text-align: left;
+}
+.menubutton2:hover {
+    background-color: #2e2e2e;
+    transition: all 0.2s ease;
+}
+::file-selector-button { font-size: initial;}

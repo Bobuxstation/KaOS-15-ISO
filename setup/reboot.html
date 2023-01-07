@@ -1,0 +1,55 @@
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title> </title>
+<link href="./Kaos 12 - Login_files/css2" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;800&display=swap" rel="stylesheet">
+<style type="text/css">
+* {
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	font-family: 'JetBrains Mono', monospace;
+	text-align: center;
+}
+section {
+	height: 100%;
+	width: 100%;
+	padding-top: 75px;
+	background-color: black;
+}
+h1 {
+	color: white;
+	font-weight: 800;
+}
+p {
+	color: white;
+	padding-top: 10px;
+}
+img {
+	vertical-align: middle;
+}
+</style>
+</head>
+<body><section>
+	<div style="margin-top:10%">
+		<img src="../KaOS13Logo.png" height="150"></img>
+		<br><br>
+		<h1>Installation finished in a nick of time!</h1>
+		<p>Please, remove installation medium and hit ENTER to proceed</p>
+	</div>
+<script>
+function delay(time) {
+  return new Promise(resolve => setTimeout(resolve, time));
+}
+
+document.addEventListener('keyup', function(event) {
+  if (event.keyCode == 13) {
+	window.location.href = "../index.html";
+  }
+});
+</script>
+
+</section>
+
+
+</body></html>

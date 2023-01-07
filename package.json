@@ -1,0 +1,27 @@
+{
+  "AppImage": "dist/kasiusnext.AppImage",
+  "name": "KasiusNextISO",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^13.2.2",
+    "electron-builder": "^20.44.4"
+  },
+  "build": {
+    "appId": "com.kaos.alpha",
+    "productName": "KasiusNextISO",
+    "artifactName": "kasiusnext.${ext}",
+    "target": "AppImage"
+  },
+  "dependencies": {
+    "jquery": "^3.6.3"
+  }
+}

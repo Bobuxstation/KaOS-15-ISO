@@ -1,0 +1,366 @@
+<html>
+<body>
+ 
+<div id="divMain"></div>
+ 
+<script type="text/javascript">
+ 
+// main
+ 
+function main()
+{
+    var session = new Session
+    (
+        new Coords(16, 16), // imageSizeInPixelsActual
+        16, // magnificationFactor
+        // colors
+        [
+            "Black",
+            "White",
+            "Red",
+            "Orange",
+            "Yellow",
+            "Green",
+            "Blue",
+            "Violet",
+            "Brown",
+            "Gray", 
+        ]
+    );
+ 
+    session.initialize();
+}
+ 
+// classes
+ 
+function Coords(x, y)
+{
+    this.x = x;
+    this.y = y;
+}
+{
+    Coords.prototype.clone = function()
+    {
+        return new Coords(this.x, this.y);
+    }
+ 
+    Coords.prototype.divide = function(other)
+    {
+        this.x /= other.x;
+        this.y /= other.y;
+        return this;
+    }
+ 
+    Coords.prototype.floor = function()
+    {
+        this.x = Math.floor(this.x);
+        this.y = Math.floor(this.y);
+        return this;
+    }
+ 
+    Coords.prototype.multiply = function(other)
+    {
+        this.x *= other.x;
+        this.y *= other.y;
+        return this;
+    }
+ 
+    Coords.prototype.multiplyScalar = function(scalar)
+    {
+        this.x *= scalar;
+        this.y *= scalar;
+        return this;
+    }
+ 
+}
+ 
+function Display(sizeInPixels)
+{
+    this.sizeInPixels = sizeInPixels;
+}
+{
+    Display.prototype.drawImage = function(image)
+    {
+        this.graphics.drawImage
+        (
+            image,
+            0, 0
+        );
+    }
+ 
+    Display.prototype.drawImageStretched = function(image)
+    {
+        this.graphics.drawImage
+        (
+            image,
+            0, 0,
+            this.sizeInPixels.x, this.sizeInPixels.y
+        );
+    }
+ 
+    Display.prototype.drawPixel = function(color, pos)
+    {
+        this.graphics.fillStyle = color;
+        this.graphics.fillRect
+        (
+            pos.x, pos.y, 1, 1
+        );
+    }
+ 
+    Display.prototype.drawRectangle = function(color, pos, size)
+    {
+        this.graphics.fillStyle = color;
+        this.graphics.fillRect
+        (
+            pos.x, pos.y, size.x, size.y
+        );
+    }
+ 
+    Display.prototype.fillWithColor = function(color)
+    {
+        this.drawRectangle(color, new Coords(0, 0), this.sizeInPixels);
+    }
+ 
+    Display.prototype.initialize = function(domElementParent)
+    {
+        this.canvas = document.createElement("canvas");
+        this.canvas.style = "border:1px solid;" 
+        this.canvas.width = this.sizeInPixels.x;
+        this.canvas.height = this.sizeInPixels.y;
+ 
+        domElementParent.appendChild(this.canvas);
+     
+        this.graphics = this.canvas.getContext("2d");
+        this.graphics.imageSmoothingEnabled = false;
+ 
+        this.fillWithColor("White");
+    }
+}
+ 
+function Session(imageSizeInPixelsActual, magnificationFactor, colors)
+{
+    this.imageSizeInPixelsActual = imageSizeInPixelsActual;
+    this.magnificationFactor = magnificationFactor;
+    this.colors = colors;
+}
+{
+    // methods
+ 
+    Session.prototype.initialize = function()
+    {
+        this.imageSizeInPixelsMagnified = this.imageSizeInPixelsActual.clone().multiplyScalar
+        (
+            this.magnificationFactor
+        );
+ 
+        this.cellSizeInPixels = new Coords(1, 1).multiplyScalar
+        (
+            this.magnificationFactor
+        );
+ 
+        var divMain = document.getElementById("divMain");
+        divMain.innerHTML = "";
+ 
+        var divSize = document.createElement("div");
+ 
+        var labelWidth = document.createElement("label");
+        labelWidth.innerHTML = "Width:";
+        divSize.appendChild(labelWidth);
+ 
+        var inputWidth = document.createElement("input");
+        inputWidth.type = "number";
+        inputWidth.value = this.imageSizeInPixelsActual.x;
+        inputWidth.onchange = this.inputWidth_Changed.bind(this);
+        divSize.appendChild(inputWidth);    
+ 
+        var labelHeight = document.createElement("label");
+        labelHeight.innerHTML = "Height:";
+        divSize.appendChild(labelHeight);
+ 
+        var inputHeight = document.createElement("input");
+        inputHeight.type = "number";
+        inputHeight.value = this.imageSizeInPixelsActual.y;
+        inputHeight.onchange = this.inputHeight_Changed.bind(this);
+        divSize.appendChild(inputHeight);
+ 
+        divMain.appendChild(divSize);
+ 
+        var divImages = document.createElement("div");
+ 
+        this.displayMagnified = new Display(this.imageSizeInPixelsMagnified);
+        this.displayMagnified.initialize(divImages);
+        this.displayMagnified.canvas.onmousemove = 
+            this.canvasMagnified_MouseMoved.bind(this);
+         
+        this.displayActualSize = new Display(this.imageSizeInPixelsActual);
+        this.displayActualSize.initialize(divImages);
+ 
+        divMain.appendChild(divImages);
+ 
+        var divFileOperations = document.createElement("div");
+ 
+        var inputFileToLoad = document.createElement("input");
+        inputFileToLoad.type = "file";
+        inputFileToLoad.onchange = this.inputFileToLoad_Changed.bind(this);
+        divFileOperations.appendChild(inputFileToLoad);
+ 
+        var buttonSave = document.createElement("button");
+        buttonSave.innerHTML = "Save";
+        buttonSave.onclick = this.buttonSave_Clicked.bind(this);
+        divFileOperations.appendChild(buttonSave);
+ 
+        divMain.appendChild(divFileOperations);
+ 
+        var buttonClear = document.createElement("button");
+        buttonClear.innerHTML = "Clear";
+        buttonClear.onclick = this.buttonClear_Clicked.bind(this);
+        divMain.appendChild(buttonClear);
+ 
+        this.colorSelected = this.colors[0];
+ 
+        var divColors = document.createElement("div");
+ 
+        for (var i = 0; i < this.colors.length; i++)
+        {
+            var color = this.colors[i];
+            var buttonColor = document.createElement("button");
+            buttonColor.innerHTML = color;
+            buttonColor.style.color = color;
+            buttonColor.onclick = this.buttonColor_Clicked.bind(this);
+            divColors.appendChild(buttonColor);
+        }
+ 
+        divMain.appendChild(divColors);
+    }
+ 
+    // ui events
+ 
+    Session.prototype.buttonClear_Clicked = function()
+    {
+        this.displayMagnified.fillWithColor(this.colorSelected);
+        this.displayActualSize.fillWithColor(this.colorSelected);
+    }
+ 
+    Session.prototype.buttonColor_Clicked = function(event)
+    {
+        var buttonColor = event.target;
+        this.colorSelected = buttonColor.innerHTML;
+    }
+ 
+    Session.prototype.buttonSave_Clicked = function()
+    {
+        var canvas = this.displayActualSize.canvas;
+ 
+        var imageFromCanvasURL = canvas.toDataURL("image/png");
+ 
+        var imageAsByteString = atob(imageFromCanvasURL.split(',')[1]);
+        var imageAsArrayBuffer = new ArrayBuffer(imageAsByteString.length);
+        var imageAsArrayUnsigned = new Uint8Array(imageAsArrayBuffer);
+        for (var i = 0; i < imageAsByteString.length; i++) 
+        {
+            imageAsArrayUnsigned[i] = imageAsByteString.charCodeAt(i);
+        }
+        var imageAsBlob = new Blob([imageAsArrayBuffer], {type:'image/png'});
+ 
+        var link = document.createElement("a");
+        link.href = window.URL.createObjectURL(imageAsBlob);
+        link.download = "Image.png";
+        link.click();
+    }
+ 
+    Session.prototype.canvasMagnified_MouseMoved = function(event)
+    {
+        if (event.buttons == 0)
+        {
+            return;
+        }
+ 
+        var canvas = event.target;
+        var canvasBounds = canvas.getBoundingClientRect();
+ 
+        var clickPosInPixels = new Coords
+        (
+            event.clientX - canvasBounds.left, 
+            event.clientY - canvasBounds.top
+        );
+ 
+        var clickPosInCells = clickPosInPixels.clone().divide
+        (
+            this.cellSizeInPixels
+        ).floor();
+ 
+        var cellPosInPixels = clickPosInCells.clone().multiply
+        (
+            this.cellSizeInPixels
+        );
+ 
+        var color = this.colorSelected;
+ 
+        this.displayMagnified.drawRectangle
+        (
+            color,
+            cellPosInPixels,
+            this.cellSizeInPixels
+        );
+ 
+        this.displayActualSize.drawPixel
+        (
+            color,
+            clickPosInCells
+        );
+    }
+ 
+    Session.prototype.inputFileToLoad_Changed = function(event)
+    {
+        var inputFileToLoad = event.target;
+        var fileToLoad = inputFileToLoad.files[0];
+        if (fileToLoad != null)
+        {
+            if (fileToLoad.type.match("image.*") != null)
+            {
+                var fileReader = new FileReader();
+                fileReader.onload = this.inputFileToLoad_Changed_Loaded.bind(this); 
+                fileReader.readAsDataURL(fileToLoad);
+            }
+        }
+    }
+ 
+    Session.prototype.inputFileToLoad_Changed_Loaded = function(fileLoadedEvent) 
+    {
+        var imageLoaded = document.createElement("img");
+        imageLoaded.src = fileLoadedEvent.target.result;
+ 
+        this.imageSizeInPixelsActual.x = imageLoaded.width;
+        this.imageSizeInPixelsActual.y = imageLoaded.height;
+ 
+        this.initialize();
+ 
+        this.displayActualSize.drawImage(imageLoaded);
+        this.displayMagnified.drawImageStretched(imageLoaded);
+    }
+ 
+    Session.prototype.inputHeight_Changed = function(event)
+    {
+        var inputHeight = event.target;
+        this.imageSizeInPixelsActual.y = inputHeight.value;
+        this.initialize();
+    }
+ 
+    Session.prototype.inputWidth_Changed = function(event)
+    {
+        var inputWidth = event.target;
+        this.imageSizeInPixelsActual.x = inputWidth.value;
+        this.initialize();
+    }
+ 
+ 
+}
+ 
+// run
+ 
+main();
+ 
+</script>
+ 
+</body>
+</html>

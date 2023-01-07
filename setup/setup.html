@@ -1,0 +1,94 @@
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Kaos 12 - setup</title>
+<link href="./Kaos 12 - Login_files/css2" rel="stylesheet">
+<style type="text/css">
+* {
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	font-family: Inter;
+	text-align: center;
+}
+h1, p {
+	color: white;
+}
+.options {
+	outline: 1px solid black;
+	height: 425px;
+	width: 800px;
+	padding: 15px;
+	border-radius: 5px;
+	background-color: #1d1d1d;
+    margin: auto;
+}
+section {
+	background-color: black;
+	height: 100%;
+	width: 100%;
+	padding-top: 75px;
+}
+button {
+	padding: 5px;
+	float: middle;
+	font-weight: bold;
+	width: 89.31;
+	background-color: #3f3f3f;
+	border-radius: 5px;
+	border: white solid 1px;
+	color: white;
+	transition: all 0.2s ease;
+}
+nav {
+	display: inline-block;
+}
+li {
+    float: left;
+    display: block;
+}
+button:hover {
+	background-color: #787878;
+	transition: all 0.2s ease;
+}
+progress {
+	width: 100%;
+}
+</style>
+</head>
+<body><section>
+	<div class="options">
+		<h1 style="font-size: 25px; text-align: center;" id="text">Installing...</h1>
+		<br><img src="../ver.png" height="150"></img><br><br><br>
+		<p>KaOS 13 Html - Infinite Epikness</p>
+		<p>get.ready.for.the.next.gen.of.epikness</p>
+		<p>Preinstalled with the WebDE Next 2</p>
+		<p>and with the latest Linux kernel</p>
+		<br><br><br>
+		<p id="percentID">Installing... 0%</p>
+		<progress id="progres" value="0" max="100"></progress>
+</div></section>
+<script>
+function delay(time) {
+  return new Promise(resolve => setTimeout(resolve, time));
+}
+
+delay(1000).then(() => document.getElementById("progres").value = 10);
+delay(2000).then(() => document.getElementById("progres").value = 23);
+delay(3000).then(() => document.getElementById("progres").value = 48);
+delay(4000).then(() => document.getElementById("progres").value = 59);
+delay(5000).then(() => document.getElementById("progres").value = 75);
+delay(6000).then(() => document.getElementById("progres").value = 83);
+delay(7000).then(() => document.getElementById("progres").value = 97);
+delay(8000).then(() => document.getElementById("progres").value = 100);
+
+delay(1000).then(() => document.getElementById("percentID").innerHTML ="Installing... 10% (Copying all system files by TAR '1/4')");
+delay(2000).then(() => document.getElementById("percentID").innerHTML ="Installing... 23% (Copying all system files by TAR '2/4')");
+delay(3000).then(() => document.getElementById("percentID").innerHTML ="Installing... 48% (Copying all system files by TAR '3/4')");
+delay(4000).then(() => document.getElementById("percentID").innerHTML ="Installing... 59% (Copying all system files by TAR '4/4', done)");
+delay(5000).then(() => document.getElementById("percentID").innerHTML ="Installing... 75% (Installing system packages... 'grub-pc','systemd-linux', etc)");
+delay(6000).then(() => document.getElementById("percentID").innerHTML ="Installing... 83% (Installing system packages... 'grub-pc','systemd-linux', etc, done)");
+delay(7000).then(() => document.getElementById("percentID").innerHTML ="Installing... 97% (Verifying system file integrity (md5sum))");
+delay(8000).then(() => document.getElementById("percentID").innerHTML = "Installing... 100% (Verifying system file integrity (md5sum)), done");
+
+delay(8000).then(() => window.location.replace("settingup.html"));
+</script>
+
+</body></html>
