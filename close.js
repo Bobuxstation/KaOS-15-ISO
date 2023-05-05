@@ -2,10 +2,10 @@ function Closetestwindow() {
   var x = document.getElementById("window");
   if (x.style.display === "none") {
     x.style.display = "block";
-    var files = document.getElementById("files"); files.src = ("https://zeankundev.github.io/KaOS/files.html");
+    var files = document.getElementById("files"); files.src = ("Files Management System Application.html");
   } else {
     x.style.display = "none";
-    var files = document.getElementById("files"); files.src = ("https://zeankundev.github.io/KaOS/files.html");
+    var files = document.getElementById("files"); files.src = ("Files Management System Application.html");
   }
 }
 function Closetestwindow2() {

@@ -10,10 +10,13 @@ function createWindow () {
       autoHideMenuBar: true,
       fullscreen: true,
       webPreferences: {
+        enableRemoteModule: true,
         nodeIntegration: true,
-        webviewTag: true,
         devTools: true,
         contextIsolation: false,
+        nodeIntegrationInSubFrames:true,
+        nodeIntegrationInWorker: true,
+        webviewTag:true
       }
     })
   
