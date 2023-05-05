@@ -1,110 +1,151 @@
 <html lang="en">
-<head><title>KaOS 15</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style type="text/css">
-* {
-	padding: 0;
-	margin: 0;
-	overflow: hidden;
-	font-family: Inter;
-	text-align: center;
-	color: #fff;
-	background-size: cover;
-background-repeat: no-repeat;
-}
-.options {
-	height: 100%;
-	width: 100%;
-	position: absolute;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-section {
-	height: 100%;
-	width: 100%;
-	z-index: 2;
-	background-color: #1d1d1d;
-	background-image: url("bg.jpg");
-}
-button {
-	padding: 5px;
-	float: middle;
-	font-weight: bold;
-	width: 89.31;
-	border-radius: 5px;
-	border: black solid 1px;
-	transition: all 0.2s ease;
-	z-index: 1;
-	position: relative;
-	color: black;
-}
-nav {
-	display: inline-block;
-}
-li {
-    float: left;
-    display: block;
-}
-button:hover {
-	background-color: #2e2e2e;
-	transition: all 0.2s ease;
-	color: white;
-	border: white solid 1px;
-}
-.block {
-	height: 50px;
-	width: 50px;
-	background: darkgray;
-	box-shadow: 10px 10px 30px rgba(0,0,0,0.25);
-	border-radius: 10px;
-	opacity: .85;
-	filter: blur(1px);
-}
-.block:nth-child(3n + 2)
-{
-	background: #1d1d1d90;
-}
-.block:nth-child(3n + 3)
-{
-	background: #4d4d4d ab;
-}
-</style>
+
+<head>
+	<title>KaOS 15</title>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<style type="text/css">
+		* {
+			padding: 0;
+			margin: 0;
+			overflow: hidden;
+			font-family: Inter;
+			text-align: center;
+			color: #fff;
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+
+		.options {
+			height: 100%;
+			width: 100%;
+			position: absolute;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		section {
+			height: 100%;
+			width: 100%;
+			z-index: 2;
+			background-color: #1d1d1d;
+			background-image: url("bg.jpg");
+		}
+
+		button {
+			padding: 5px;
+			float: middle;
+			font-weight: bold;
+			width: 89.31;
+			border-radius: 5px;
+			border: black solid 1px;
+			transition: all 0.2s ease;
+			z-index: 1;
+			position: relative;
+			color: black;
+		}
+
+		nav {
+			display: inline-block;
+			background: #1d1d1d90;
+			padding: 25px;
+			border-radius: 5px;
+			backdrop-filter: blur(10px);
+		}
+
+		li {
+			float: left;
+			display: block;
+		}
+
+		button:hover {
+			background-color: #2e2e2e;
+			transition: all 0.2s ease;
+			color: white;
+			border: white solid 1px;
+		}
+
+		.block {
+			height: fit-content;
+			width: 150px;
+			padding: 5px;
+			background: darkgray;
+			box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.25);
+			border-radius: 10px;
+			opacity: .85;
+			position: absolute;
+			background: #1d1d1d90;
+		}
+	</style>
 </head>
-<body><section class="container">
-	<div class="options">
-		
-		<nav><ul>
-		<li><a href="kaostest.html"><button onmouseover="loginuser1()"><img src="Icons/user.png" style="height: 52; width: 58;"></img>User1</button></a>&nbsp;</li>
-		<li><a href="guest.html"><button onmouseover="loginguest()"><img src="Icons/guest.png" style="height: 52; width: 58;"></img>Guest</button></a>&nbsp;</li>
-		</ul></nav></div>
 
-<script type="text/javascript" src="animate.js"></script>
-<script type="text/javascript">
-	const container = document.querySelector('.container');
-	for ( var i = 1; i<=1000; i++){
-		const blocks = document.createElement('div')
-		blocks.classList.add('block');
-		container.appendChild(blocks);
-	}
+<body>
+	<section class="container">
+		<div class="options">
+			<nav>
+				Welcome Back!<br><br>
+				<ul>
+					<li><a href="kaostest.html"><button onmouseover="loginuser1()"><img src="Icons/user.png"
+									style="height: 52; width: 58;"></img>User1</button></a>&nbsp;</li>
+					<li><a href="guest.html"><button onmouseover="loginguest()"><img src="Icons/guest.png"
+									style="height: 52; width: 58;"></img>Guest</button></a></li>
+				</ul>
+			</nav>
+		</div>
 
-	function generate(){
-		anime({
-			targets: '.block',
-			translateX : function(){
-				return anime.random(-1000, 1000)
-			},
-			translateY : function(){
-				return anime.random(-1000, 1000)
-			},
-			scale: function(){
-				return anime.random(1, 5)
-			}
-		})
-	}
+		<script type="text/javascript" src="animate.js"></script>
+		<script>
+			window.$ = window.jQuery = require('jquery');
+		</script>
+		<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+		<script type="text/javascript">
+			fetch("https://type.fit/api/quotes")
+				.then(function (response) {
+					return response.json();
+				})
+				.then(function (data) {
+					var allquotes = data;
 
-	generate()
-</script>
-</section>
+					function pickRandomQuestion() {
+						var obj_keys = Object.keys(allquotes);
+						var ran_key = obj_keys[Math.floor(Math.random() * obj_keys.length)];
+						selectedQuote = allquotes[ran_key];
+
+						return selectedQuote
+					}
+
+					const container = document.querySelector('.container');
+					for (var i = 1; i <= 10; i++) {
+						let quote = pickRandomQuestion();
+						console.log(quote);
+
+						const blocks = document.createElement('div');
+						blocks.innerHTML = quote.text + "<br><br> -" + quote.author;
+						blocks.classList.add('block');
+						container.prepend(blocks);
+
+						$(".block").draggable();
+					}
+
+					function generate() {
+						anime({
+							targets: '.block',
+							translateX: function () {
+								return anime.random(0, (window.innerWidth - 150))
+							},
+							translateY: function () {
+								return anime.random(0, (window.innerHeight - 150))
+							},
+							scale: function () {
+								return 1
+							}
+						})
+					}
+
+					generate()
+				});
+		</script>
+	</section>
 </body>
+
 </html>
