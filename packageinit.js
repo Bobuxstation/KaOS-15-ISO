@@ -29,7 +29,7 @@ function spawnwindow(name, URL, icon, height, width) {
     //create header
     header.classList.add('header');
     header.style.width = width;
-    header.innerHTML = "<button class='headertext'>" + name + "</button>";
+    header.innerHTML = "<button class='headertext'>" + name + " (Kasius-Next Application)</button>";
 
     //create close button
     close.innerHTML = '<i class="fa-solid fa-xmark"></i>';
@@ -80,8 +80,7 @@ function spawnwindow(name, URL, icon, height, width) {
     //make the window draggable
     $(".window").draggable({
         handle: ".header",
-        containment: "#body",
-        opacity: 0.75
+        containment: "#body"
     });
 }
 

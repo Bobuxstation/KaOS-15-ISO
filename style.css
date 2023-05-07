@@ -326,7 +326,7 @@ nav {
 
 .settingssidebar {
   backdrop-filter: blur(10px);
-  webkit-backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   padding: 7.5px !important;
   background: rgba(60, 60, 60, 0.8) !important;
 }
