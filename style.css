@@ -438,3 +438,13 @@ nav {
   font-family: inter;
   font-size: 17.5px;
 }
+
+#applist {
+  display: flex;
+  flex-direction: column;
+}
+
+#applist .menubutton2 {
+  width: 100%;
+  height: fit-content;
+}

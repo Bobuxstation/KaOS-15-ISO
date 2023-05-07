@@ -19,6 +19,8 @@ function createWindow () {
         webviewTag:true
       }
     })
+    require('@electron/remote/main').initialize()
+    require('@electron/remote/main').enable(win.webContents)
   
     win.loadFile('index.html')
   }

@@ -12,6 +12,9 @@
     <link href="interfont/inter.css" rel="stylesheet">
     <script type="text/javascript" src="Settings.js"></script>
     <link rel="stylesheet" href="style.css" id="style">
+
+    <script type="text/javascript" src="jsonloader.js"></script>
+    <script type="text/javascript" src="packageinit.js" defer></script>
 </head>
 
 <body id="body">
@@ -32,7 +35,7 @@
             </ol>
             <script type="text/javascript" src="finder.js"></script>
         </div>
-        <div id="rundialog"
+        <dialog id="rundialog"
             style="background-color: lightgray; padding: 5px; text-align: center;position:fixed!important; z-index:1; font-family: 'Times New Roman', Times, serif; display: none;">
             <div style=" padding: 5px;background-color: blue; color: white;">
                 <h2 style="margin: 0;">Run an app</h2>
@@ -45,7 +48,7 @@
                 onclick="document.getElementById('rundialog').style.display = 'none'">Cancel</button>
             <button style="background: none; padding: 5px; font-family: 'Times New Roman', Times, serif;"
                 onclick="fullscreen(document.getElementById('runinput').value);document.getElementById('rundialog').style.display = 'none'">Run</button>
-        </div>
+        </dialog>
     </div>
     <div class="sidebar2" id="Sidebar">
         <div class="search2">
@@ -103,7 +106,6 @@
         <webview src="" id="fullscreenapp" nodeIntegration webpreferences="contextIsolation=false"></webview>
     </div>
 
-
     <!--Window-->
 
     <h1 id="span" style="padding: 0; margin: 0; text-align: center;"></h1>
@@ -118,7 +120,8 @@
         </div>
         <div class="content">
             <webview src="" width="600" height="450" nodeIntegration webpreferences="contextIsolation=false"
-                style="border-radius: 0px 0px 5px 5px; border: black solid 0px; background: none; width: 600px; height: 450px;" id="files">
+                style="border-radius: 0px 0px 5px 5px; border: black solid 0px; background: none; width: 600px; height: 450px;"
+                id="files">
             </webview>
         </div>
     </div>
@@ -288,9 +291,7 @@
                 <h3 style="margin: 0;"><i class="fa-solid fa-triangle-exclamation"></i> Beta</h3>
             </div>
             <div class="Settings"
-                style="background-color: #232323; color: white; float: right; width: 484.7px; height: 440px; padding: 5px; border-radius: 0px 0px 5px 0px;">
-                <h4><i class="fa-solid fa-triangle-exclamation"></i> KaOS 15 will stop receiving updates after the 30th
-                    november of 2022</h4>
+                style="background-color: #232323;color: white;float: right;width: 494.7px;height: 450px;padding: 12px;border-radius: 0px 0px 5px 0px;box-sizing: border-box;">
                 <h3 style="margin-top: 0;">Backgrounds</h3>
                 <button onclick="bg1()" class="special">Normal</button><br><br>
                 <button onclick="bg2()" class="special">City With Water</button><br><br>
@@ -301,7 +302,10 @@
                 <button onclick="color1()" class="special">Default</button><br><br>
                 <button onclick="color2()" class="special">Tablet Mode</button><br><br>
                 <button onclick="color3()" class="special">Too Simple</button><br><br>
-                <button onclick="color4()" class="special">Classic</button><br><br>
+                <button onclick="color4()" class="special">Classic</button><br>
+                <h3>KaOS 15 Subsystem For Kasius-Next</h3>
+                <div id="applist">
+                </div>
             </div>
         </div>
     </div>
