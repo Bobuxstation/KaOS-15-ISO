@@ -79,8 +79,7 @@ function spawnwindow(name, URL, icon, height, width) {
 
     //make the window draggable
     $(".window").draggable({
-        handle: ".header",
-        containment: "#body"
+        handle: ".header"
     });
 }
 
@@ -90,9 +89,9 @@ function loadApps(searchQuery) {
     .then((data) => {
         data.packages.forEach(items => {
             let applist = document.getElementById("applist");
-            let btn = document.createElement("btn");
+            let btn = document.createElement("button");
             btn.className = "menubutton2"
-            btn.innerHTML = "<img style='height: 30px; width: 30px;' src='" + items.icon + "'></img> " + items.name;
+            btn.innerHTML = "<img style='height: 50px; width: 50px;' src='" + items.icon + "'></img><br>" + items.name;
             btn.onclick = function () {
                 spawnwindow(items.name, items.URL, items.icon, items.height, items.width)
                 // menu()
