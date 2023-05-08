@@ -175,7 +175,7 @@ footer {
   position: fixed !important;
   color: white;
   padding: 1px;
-  top: -1;
+  top: 5;
   background: rgba(60, 60, 60, 0.67);
   backdrop-filter: blur(10px);
   border-radius: 5px;
@@ -194,7 +194,7 @@ footer {
   width: 35px;
   border: black solid 0px;
   border-radius: 0px 5px 0px 0px;
-  font-size: 15px;
+  font-size: 16px;
   background: none;
 }
 
@@ -425,7 +425,7 @@ nav {
   height: 100%;
   width: 35px;
   border: black solid 0px;
-  font-size: 15px;
+  font-size: 12px;
   background: none;
 }
 
