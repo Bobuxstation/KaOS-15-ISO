@@ -1,14 +1,17 @@
 const electron = require('electron')
-const {app, BrowserWindow, ipcMain, ipcRenderer} = require("electron");
+const {app, BrowserWindow, ipcMain, ipcRenderer, screen} = require("electron");
 const fs = require('fs');
 const path = require('path');
 
 function createWindow () {
 
+    const { width, height } = screen.getPrimaryDisplay().workAreaSize;
+
     const win = new BrowserWindow({
       icon: './costume2.png',
       autoHideMenuBar: true,
-      fullscreen: true,
+      width: width,
+      height: height,
       webPreferences: {
         enableRemoteModule: true,
         nodeIntegration: true,
