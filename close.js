@@ -38,7 +38,7 @@ function Closetestwindow5() {
   var x = document.getElementById("window5");
   if (x.style.display === "none") {
     x.style.display = "block";
-    var store = document.getElementById("store"); store.src = ("https://zeankundev.github.io/KaOS-Store/");
+    var store = document.getElementById("store"); store.src = ("https://bobuxstation.github.io/KaOS-Store/");
   } else {
     x.style.display = "none";
   }
@@ -124,7 +124,7 @@ function CloseForward() {
   var content = document.getElementById("forward");
   if (x.style.display === "none") {
     x.style.display = "block";
-    content.src = "https://zeankundev.github.io/forward/";
+    content.src = "https://bobuxstation.github.io/KaOS-Store/forward/";
   } else {
     x.style.display = "none";
     content.src = "";
